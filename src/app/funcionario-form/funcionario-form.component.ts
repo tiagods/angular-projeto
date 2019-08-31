@@ -5,7 +5,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
   templateUrl: './funcionario-form.component.html',
   styleUrls: ['./funcionario-form.component.css']
 })
-export class FuncionarioFormComponent{
+export class FuncionarioFormComponent {
   nome = 'Tiago';
   adicionado = false;
   @Output() funcionarioAdicionado = new EventEmitter();

@@ -12,10 +12,11 @@ export class FuncionarioCardComponent {
     return this.funcionario.nome.startsWith('T');
   }
 
-  getEstilosCartao(){
+  getEstilosCartao() {
       return {
         'border-width.px': this.funcionario.id,
-        backgroundColor:this.funcionario.id % 2 === 0 ? 'lightblue' : 'lightgreen'
-      }
+        backgroundColor: this.funcionario.id % 2 === 0 ? 'lightblue' : 'lightgreen'
+      };
   }
+
 }

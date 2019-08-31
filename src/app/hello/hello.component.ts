@@ -5,5 +5,5 @@ import {Component} from '@angular/core';
     template: ``
 })
 
-export class HelloComponent{
+export class HelloComponent {
 }
