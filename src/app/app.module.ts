@@ -24,4 +24,8 @@ import { FormularioComponent } from './formulario/formulario.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  salvar() {
+    console.log('salvando');
+  }
+ }

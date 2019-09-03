@@ -12,7 +12,8 @@ export class AppComponent {
   troco = 0.57762;
 
   funcionarios = [];
-  aoAdicionar(funcionario){
+  aoAdicionar(funcionario) {
     this.funcionarios.push(funcionario);
   }
+
 }

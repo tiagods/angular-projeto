@@ -1,7 +1,7 @@
-<form (ngSubmit)="salvar()">
+<form #usuarioForm="ngForm" (ngSubmit)="salvar(usuarioForm)">
   <div class="form-group">
       <label class="form-control-label">Nome</label>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" >
   </div>
   <div class="form-group">
       <label class="form-control-label">Email</label>
@@ -15,5 +15,5 @@
         <option>Programador</option>
       </select>
   </div>
-  <button type="button" class="btn btn-primary">Salvar</button>
+  <button type="submit" class="btn btn-primary">Salvar</button>
 </form>
