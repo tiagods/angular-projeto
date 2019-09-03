@@ -10,10 +10,12 @@ import { FuncionarioCardComponent } from './funcionario-card/funcionario-card.co
 import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.component';
 import { CampoColoridoDirective } from './campo-colorido.directive';
 import { HelloComponent } from './hello/hello.component';
+import { FormularioComponent } from './formulario/formulario.component';
 
 @NgModule({
   declarations: [
-    AppComponent, HelloComponent, BemVindoComponent, FuncionarioCardComponent, FuncionarioFormComponent, CampoColoridoDirective
+    AppComponent, HelloComponent, BemVindoComponent, FuncionarioCardComponent,
+    FuncionarioFormComponent, CampoColoridoDirective, FormularioComponent
   ],
   imports: [
     BrowserModule, FormsModule,
