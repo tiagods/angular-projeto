@@ -9,7 +9,20 @@ import { NgForm } from '@angular/forms';
 
 export class FormularioComponent {
 
+  cliente = new Cliente();
+  profissoes = ['Programador', 'Empresario', 'Outros'];
+
   salvar(form: NgForm) {
-    console.log(form);
+    console.log(form.value);
+    console.log(this.cliente);
+    console.log('Salvo com sucesso!');
+    form.reset({ profissao: '' });
   }
+}
+
+
+class Cliente {
+  nome: string;
+  email: string;
+  profissao: string;
 }
