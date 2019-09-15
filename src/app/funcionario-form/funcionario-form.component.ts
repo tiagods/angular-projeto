@@ -1,3 +1,6 @@
+import { logging } from 'protractor';
+import { LogService } from './../log.service';
+import { FuncionarioService } from './../funcionario.service';
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
@@ -6,18 +9,14 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./funcionario-form.component.css']
 })
 export class FuncionarioFormComponent {
-  nome = 'Tiago';
-  adicionado = false;
-  @Output() funcionarioAdicionado = new EventEmitter();
-  ultimoId = 0;
+  constructor(
+    private funcionarioService: FuncionarioService,
+    private logService: LogService
+    ) {
+    }
 
-  adicionar() {
-    this.adicionado = true;
-    const funcionario = {
-      id: ++this.ultimoId,
-      nome: this.nome
-    };
-    // comunicação de componentes
-    this.funcionarioAdicionado.emit(funcionario);
+  adicionar(nome: string) {
+    this.funcionarioService.adicionar(nome);
+    this.logService.log(`Adicionando ${nome}`);
   }
 }

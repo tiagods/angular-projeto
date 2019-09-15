@@ -5,13 +5,12 @@
     <h3>{{preco | number : '1.2-2'}}</h3>
     <h3>{{troco | currency : 'BRL':true:'1.2-2'}}</h3>
 
-    <app-funcionario-form (funcionarioAdicionado)="aoAdicionar($event)"></app-funcionario-form>
-    <div class="row" style="margin-top: 20px">
-        <div class="col-2" *ngFor="let f of funcionarios">
-            <app-funcionario-card [funcionario]="f"></app-funcionario-card>
-        </div>
+  <app-funcionario-form></app-funcionario-form>
+
+  <div class="row" style="margin-top: 20px">
+    <div class="col-2" *ngFor="let f of funcionarios">
+      <app-funcionario-card [funcionario]="f"></app-funcionario-card>
     </div>
-    <app-formulario></app-formulario>
+  </div>
 </div>
 <app-bem-vindo></app-bem-vindo>
-

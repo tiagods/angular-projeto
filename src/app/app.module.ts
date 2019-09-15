@@ -1,3 +1,5 @@
+import { LogService } from './log.service';
+import { FuncionarioService } from './funcionario.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -11,6 +13,11 @@ import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.co
 import { CampoColoridoDirective } from './campo-colorido.directive';
 import { HelloComponent } from './hello/hello.component';
 import { FormularioComponent } from './formulario/formulario.component';
+import { FuncionarioAbreviadoService } from './funcionario.abreviado.service';
+
+const criarFuncionarioService = () => {
+  return new FuncionarioAbreviadoService(2);
+};
 
 @NgModule({
   declarations: [
@@ -21,7 +28,13 @@ import { FormularioComponent } from './formulario/formulario.component';
     BrowserModule, FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [{
+    // provide: FuncionarioService, useClass: FuncionarioService} useClass me dara a instancia de qual a classe que quero usar
+    // provide: FuncionarioService, useClass: FuncionarioAbreviadoService}
+    provide: FuncionarioService, useFactory: criarFuncionarioService},
+    LogService,
+    {provide: 'LogPrefixo', useValue: 'Log'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
